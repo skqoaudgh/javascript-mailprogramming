@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__input #input,
+.container__output #output {
+    border: none;
+    background: white;
+    width: 500px;
+    margin-bottom: 12px;
+    font-size: inherit;
+}
