@@ -1,0 +1,33 @@
+## 문제
+~~~
+코딩테스트 2019-08-18
+
+바이너리 배열(원소를 0, 1만 갖는 배열)이 주어졌을 때, 배열을 정렬하시오.
+단, 시간 복잡도는 O(n), 공간 복잡도는 O(1).
+
+Input: [1, 0, 1, 0, 1, 0, 0, 1]
+Output: [0, 0, 0, 0, 1, 1, 1, 1]
+~~~
+
+## 코드
+~~~
+function sortBinaryArray(input) {
+    let zeroCount = 0;
+    input.forEach(element => {
+        if(element == 0) {
+            input[zeroCount++] = 0;
+        }
+    });
+
+    for(let i=zeroCount; i<input.length; i++) {
+        input[i] = 1;
+    }
+    return input;
+}
+~~~
+
+## 설명
+~~~
+1. 배열을 순회하면서 0이 나오면 맨 앞 원소부터 0으로 교체하고 개수를 샌다.
+2. 0의 개수를 이용하여 0 다음 원소부터 배열 끝까지 1로 교체한다.
+~~~
